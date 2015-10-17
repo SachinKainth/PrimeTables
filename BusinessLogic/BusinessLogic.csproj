@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="INumberListMultiplier.cs" />
     <Compile Include="InvalidNumberOfPrimesException.cs" />
     <Compile Include="IPrimes.cs" />
+    <Compile Include="NumberListMultiplier.cs" />
     <Compile Include="Primes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

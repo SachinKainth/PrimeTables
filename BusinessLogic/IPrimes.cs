@@ -5,6 +5,6 @@ namespace BusinessLogic
     public interface IPrimes
     {
         int EstimateSieveSizeFromNumberOfPrimes(int numberOfPrimes);
-        List<int> GetFirstNPrimes(int numberOfPrimes);
+        IEnumerable<int> GetFirstNPrimes(int numberOfPrimes);
     }
 }

@@ -18,7 +18,7 @@ namespace BusinessLogic
             return (int)sieveSize;
         }
 
-        public List<int> GetFirstNPrimes(int numberOfPrimes)
+        public IEnumerable<int> GetFirstNPrimes(int numberOfPrimes)
         {
             if (numberOfPrimes <= 0)
                 throw new InvalidNumberOfPrimesException("The number of primes cannot be 0 or less.");
@@ -34,7 +34,7 @@ namespace BusinessLogic
             return primes;
         }
 
-        private static List<int> ExtractNPrimes(int numberOfPrimes, bool[] primesInSieveSize)
+        private IEnumerable<int> ExtractNPrimes(int numberOfPrimes, bool[] primesInSieveSize)
         {
             return primesInSieveSize
                 .Select((p, i) => new { number = i, isPrime = p })
