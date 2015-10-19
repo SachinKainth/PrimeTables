@@ -6,12 +6,12 @@ Update line 21 of HomeController to pass in a value of numberOfPrimes to GetFirs
 
 * Good points
 
-There is good separation of concerns between the site and the Primes class and the NumberListMultiplier class.
-Good test coverage.
+1. There is good separation of concerns between the site and the Primes class and the NumberListMultiplier class.
+2. Good test coverage.
 
 * What needs to be improved
 
-EstimateSieveSizeFromNumberOfPrimes shouldn't really be public.
-Need to create a textbox and button to accept a number from the user, with which to generate the table.
-Need to have a better data structure for Multiples in PrimeMultiplesViewModel so that all rows are not in one list.
-Need to deal with overflows in EstimateSieveSizeFromNumberOfPrimes.
+1. EstimateSieveSizeFromNumberOfPrimes shouldn't really be public.
+2. Need to create a textbox and button to accept a number from the user, with which to generate the table.
+3. Need to have a better data structure for Multiples in PrimeMultiplesViewModel so that all rows are not in one list.
+4. Need to deal with overflows in EstimateSieveSizeFromNumberOfPrimes.
