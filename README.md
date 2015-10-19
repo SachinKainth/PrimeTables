@@ -7,6 +7,7 @@ Update line 21 of HomeController to pass in a value of numberOfPrimes to GetFirs
 * Good points
 
 There is good separation of concerns between the site and the Primes class and the NumberListMultiplier class.
+Good test coverage.
 
 * What needs to be improved
 
