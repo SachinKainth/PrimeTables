@@ -2,7 +2,7 @@
 
 * How to Run
 
-Update line 21 of HomeController to pass in a value of numberOfPrimes to GetFirstNPrimes and run the Site project to see the table that is generated.
+Run the Site project and enter the number of prime numbers into the textbox, on the page that appears, and press the submit button.
 
 * Good points
 
@@ -12,6 +12,5 @@ Update line 21 of HomeController to pass in a value of numberOfPrimes to GetFirs
 * What needs to be improved
 
 1. EstimateSieveSizeFromNumberOfPrimes shouldn't really be public.
-2. Need to create a textbox and button to accept a number from the user, with which to generate the table.
-3. Need to have a better data structure for Multiples in PrimeMultiplesViewModel so that all rows are not in one list.
-4. Need to deal with overflows in EstimateSieveSizeFromNumberOfPrimes.
+2. Need to have a better data structure for Multiples in PrimeMultiplesViewModel so that all rows are not in one list.
+3. Need to deal with overflows in EstimateSieveSizeFromNumberOfPrimes.
