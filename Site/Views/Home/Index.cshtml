@@ -1,30 +1,13 @@
 ﻿@model Site.Models.PrimeMultiplesViewModel
 
 @{
-    ViewBag.Title = "Primes Multiples Table";
+    ViewBag.Title = "Number of Primes";
 }
 
-<h2>Primes Multiples Table</h2>
+<h2>Number of Primes</h2>
 
-<table border="1">
-    <tr>
-        <th></th>
-        @foreach (var prime in Model.Primes)
-        {
-            <th scope="col">@prime</th>
-        }
-    </tr>
-    @{
-        var multiplesIndex = 0;
-    }
-    @foreach (var prime in Model.Primes)
-    {
-        <tr>
-            <th scope="row">@prime</th>
-            @foreach (var p in Model.Primes)
-            {
-                <td>@Model.Multiples.ElementAt(multiplesIndex++)</td>
-            }
-        </tr>
-    }
-</table>
+@using (Html.BeginForm("GenerateTable", "Home", FormMethod.Post))
+{
+    @Html.TextBoxFor(x => x.NumberOfPrimes)
+    <input type="submit" />
+}

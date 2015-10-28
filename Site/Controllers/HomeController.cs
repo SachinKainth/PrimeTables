@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Linq;
+using System.Web.Mvc;
 using BusinessLogic;
 using Site.Models;
 
@@ -18,10 +20,26 @@ namespace Site.Controllers
         // GET: Default
         public ActionResult Index()
         {
-            var primes = _primes.GetFirstNPrimes(5);
-            var multiples = _numberListMultiplier.Multiply(primes);
+            return View();
+        }
 
-            return View(new PrimeMultiplesViewModel { Primes = primes, Multiples = multiples });
+        [HttpPost]
+        public ActionResult GenerateTable(PrimeMultiplesViewModel model)
+        {
+            try
+            {
+                var primes = _primes.GetFirstNPrimes(model.NumberOfPrimes).ToList();
+                var multiples = _numberListMultiplier.Multiply(primes);
+
+                model.Primes = primes;
+                model.Multiples = multiples;
+            }
+            catch (Exception e)
+            {
+                model.ErrorMessage = e.Message;
+            }
+            
+            return View("PrimesMultiplesTable", model);
         }
     }
 }

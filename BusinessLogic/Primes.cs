@@ -46,20 +46,20 @@ namespace BusinessLogic
 
         private void SieveOutNonPrimes(int sieveSize, bool[] primesInSieveSize)
         {
-            for (int i = 0; i*i < sieveSize; i++)
+            for (var i = 0; i*i < sieveSize; i++)
                 if (primesInSieveSize[i])
-                    for (int j = i*i; j < sieveSize; j += i)
+                    for (var j = i*i; j < sieveSize; j += i)
                         primesInSieveSize[j] = false;
         }
 
         private bool[] InitialisePrimes(int sieveSize)
         {
-            bool[] primesInSieveSize = new bool[sieveSize + 1];
+            var primesInSieveSize = new bool[sieveSize + 1];
 
             primesInSieveSize[0] = false;
             primesInSieveSize[1] = false;
 
-            for (int i = 2; i <= sieveSize; i++) primesInSieveSize[i] = true;
+            for (var i = 2; i <= sieveSize; i++) primesInSieveSize[i] = true;
 
             return primesInSieveSize;
         }

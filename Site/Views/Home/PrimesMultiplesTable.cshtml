@@ -1,0 +1,39 @@
+﻿@model Site.Models.PrimeMultiplesViewModel
+
+@{
+    ViewBag.Title = "Primes Multiples Table";
+}
+
+<h2>Primes Multiples Table</h2>
+
+@if (Model.ErrorMessage != null)
+{
+    @Html.LabelFor(x => x.ErrorMessage)
+    @Html.DisplayFor(x => x.ErrorMessage)
+}
+else
+{
+    <table>
+        <tr>
+            <th></th>
+            @foreach (var prime in Model.Primes)
+            {
+                <th scope="col">@prime</th>
+            }
+        </tr>
+        @{
+            var multiplesIndex = 0;
+
+            foreach (var prime in Model.Primes)
+            {
+                <tr>
+                    <th scope="row">@prime</th>
+                    @foreach (var p in Model.Primes)
+                    {
+                        <td>@Model.Multiples.ElementAt(multiplesIndex++)</td>
+                    }
+                </tr>
+            }
+        }
+    </table>
+}
